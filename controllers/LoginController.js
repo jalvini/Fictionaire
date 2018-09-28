@@ -1,5 +1,5 @@
 const bCrypt = require('bcrypt');
-let User = require('../models/users');
+const User = require('../models/users');
 
 exports.login = (req, res) => {
     let user = req.session.user;
