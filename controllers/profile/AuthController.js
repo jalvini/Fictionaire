@@ -1,5 +1,5 @@
-let Story = require('../../models/stories');
-let Authorized = require('../../models/authorized');
+const Story = require('../../models/stories');
+const Authorized = require('../../models/authorized');
 
 exports.auth = (req, res) => {
     const user = req.session.user;
