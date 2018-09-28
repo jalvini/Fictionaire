@@ -1,7 +1,6 @@
 const fs = require('fs');
 const bcrypt = require('bcrypt');
-
-let User = require('../../models/users');
+const User = require('../../models/users');
 
 exports.editProfile = (req, res) => {
     let user = req.session.user;
