@@ -1,4 +1,4 @@
-let Story = require('../models/stories');
+const Story = require('../models/stories');
 
 exports.tag = (req, res) => {
     let name = req.params.name;
