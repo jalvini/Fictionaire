@@ -1,4 +1,4 @@
-let Category = require('../models/categories');
+const Category = require('../models/categories');
 
 exports.categoryId = (req, res) => {
     let name = req.params.name;
