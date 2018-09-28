@@ -1,6 +1,6 @@
-let Story = require('../../models/stories');
-let Category = require('../../models/categories');
-let Authorized = require('../../models/authorized');
+const Story = require('../../models/stories');
+const Category = require('../../models/categories');
+const Authorized = require('../../models/authorized');
 
 exports.write =  (req, res) => {
     let user = req.session.user;
