@@ -1,8 +1,8 @@
 const fs = require('fs');
-let User = require('../models/users');
-let Story = require('../models/stories');
-let Authorized = require('../models/authorized');
-let Friends = require('../models/friends');
+const User = require('../models/users');
+const Story = require('../models/stories');
+const Authorized = require('../models/authorized');
+const Friends = require('../models/friends');
 
 exports.dashboard = (req, res) => {
     let pic = fs.readdirSync('public/user/pics/joe/');
