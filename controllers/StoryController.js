@@ -1,5 +1,5 @@
-let Story = require('../models/stories');
-let Chapters = require('../models/chapters');
+const Story = require('../models/stories');
+const Chapters = require('../models/chapters');
 
 exports.storyId = (req, res) => {
     let id = req.params.id;
