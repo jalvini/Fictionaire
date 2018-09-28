@@ -1,0 +1,38 @@
+<div class="col-lg-12 about-left">
+{{#if all}}
+                    <!-- All Messages -->
+                <div style="float:right; width: 100%; text-align: right">New Message <i class="far fa-plus-square"></i></div>
+                    {{#each received}}
+                        <h3 style="width: 100%; padding-bottom: 30px;">Received Messages</h3>
+                        <h4>{{this.title}}</h4>
+                        <pre>{{this.date}}</pre>
+                        <p>
+                        {{this.body}}
+                        </p>
+                        <a href="/messages/{{this._id}}/">View Full Message</a>
+                    {{/each}}
+                    {{#each sent}}
+                        {{this.title}}
+                        {{this.date}}
+                        {{this.body}}
+                    {{/each}}
+                {{/if}}
+
+                {{#if one}}
+                    <!-- Single Message -->
+                    {{message.title}}
+                    {{message.date}}
+                    {{message.body}}
+                {{/if}}
+                {{#if send}}
+                    <!-- Send Message -->
+                    {{#form "/messages" method="post" class="form"}}
+                        {{label "Title" "Title" style="margin-top:10px;"}}
+                        {{input "name" name class="form-control"}}
+                        {{label "Body" "Body" style="margin-top:10px;"}}
+                        {{textarea "name" "Yo" class="form-control"}}
+                        <a href="#"><div class="message-buttons" style="background:lightgrey;">Cancel</div ></a>
+                        {{submit "save" "Send" class="message-submit" style="background:limeGreen;"}}
+                    {{/form}}
+                {{/if}}
+</div>

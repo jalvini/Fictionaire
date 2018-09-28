@@ -1,0 +1,47 @@
+<head>
+    <title>{{title}}</title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script>
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+    <!-- Style-sheets -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="/stylesheets/flexslider.css" type="text/css" media="screen" property="" />
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="/stylesheets/lightbox.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+
+    <!--// Style-sheets -->
+    <!--web-fonts-->
+    <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+
+
+    {{#if edit}}
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link href="/components/imgareaselect/css/imgareaselect-default.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="/stylesheets/jquery.awesome-cropper.css">
+    {{/if}}
+
+    {{#if writing}}
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=3ruzlww5dvssgo262arfqzkunf3a3ihkakgzj4mpxttfcy5b"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    {{/if}}
+</head>

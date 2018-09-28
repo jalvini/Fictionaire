@@ -1,0 +1,13 @@
+<div class="col-lg-12 about-left">
+
+{{#each story}}
+                    {{#if this.published}}
+                    <div class="col-lg-12 about-left" style="border-bottom:1px solid lightgrey; padding-top:20px; padding-bottom:20px;">
+                    <a href="/story/{{this._id}}/">{{this.title}}</a><br>
+                    {{{trimString this.body}}}
+                    <pre style="color: orangered">{{this.author}} - {{dateFormat this.date "MMMM Do YYYY, h:mm:ssa"}}</pre>
+                    </div>
+                    {{/if}}
+                {{/each}}
+</div>
+            <div class="col-lg-12 about-left" style="margin-bottom:75px;"></div>

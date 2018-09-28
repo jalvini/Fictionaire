@@ -1,0 +1,42 @@
+<div class="col-lg-12 about-left">
+{{#if register}}
+                    <div style="width:100%; text-align:center;">
+                    <h1>Thanks For Registering</h1>
+                    <p>To Login CLick <a href="/login/">Here</a></p>
+                    </div>
+                {{else}}
+                    <div style="width:100%; text-align:center; color:red; height: 0px;">{{error}}</div>
+                    <div style="width:50%; margin:0 auto !important; padding-top:40px;">
+                        {{#form "/register" id="form" class="form"}}
+                            <p>Hello,</p>
+                            <p>
+                                If you'd like to Register you can do so by filling in a username
+                                {{input "name" name type="text" placeholder="Here" style="border: 0 solid white;border-bottom: 1px dashed grey;outline: none "}}
+                                <br>Enter a secure password
+                                {{input "password" password type="password" placeholder="Here" style="border: 0 solid white;border-bottom: 1px dashed grey;outline: none "}}
+                                <br>
+                                And enter your email address
+                                {{input "email" name type="text" id="test" placeholder="Here" style="border: 0 solid white;border-bottom: 1px dashed grey;outline: none "}}
+                            </p>
+                            <br>
+                            <p>When you are done press enter and an email will be sent and you will be ready to go!!</p>
+                        {{/form}}
+                        <div style="text-align: right; width: 100%; margin-top: 5px;"><a href="/login/">Login</a></div>
+
+                    </div>
+                {{/if}}
+</div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $("#test").focusout(function () {
+                            $("form").submit();
+                        });
+                        $("input").keypress(function (event) {
+                            if (event.which == 13) {
+                                event.preventDefault();
+                                $("form").submit();
+                            }
+                        });
+                    });
+                </script>

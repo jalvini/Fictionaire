@@ -1,0 +1,105 @@
+            <div class="col-xl-4 col-md-4 col-sm-12 dashside">
+                <img src="/user/pics/{{user.name}}/{{pic}}" style="width:100%; border: 1px solid #000">
+                <div style="width:100%; text-align: center"><h3>Hey {{user.name}}</h3></div>
+                <div style="border-bottom: 1px solid #bbb">
+                    <div style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px; width: 100%; text-align: left;">
+                        <i class="fas fa-pen-alt"></i>
+                        <a href="/write/" style="font-weight: bolder">Write a Story</a>
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid #bbb">
+                    <div style="padding-top: 20px; padding-left: 20px;  padding-bottom: 20px; width: 100%; text-align: left;">
+                        <i class="fas fa-user-edit"></i>
+                        <a href="/profile/edit/" style="font-weight: bolder">Edit Profile</a>
+                    </div>
+                </div>
+
+                <div style="border-bottom: 1px solid #bbb">
+                    <div style="padding-top: 20px; padding-left: 20px;  padding-bottom: 20px; width: 100%; text-align: left;">
+                        <i class="fas fa-share-square"></i>
+                        <a href="/authorize/" style="font-weight: bolder">Authorize Users</a>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                <h3>Friends</h3>
+                    {{#each friends}}
+                        <div class="sidebar-friends">
+                        <a href="/user/{{this.name}}/">
+                            <div class="sidebar-friends-content">
+                            <img src="/user/pics/{{this.name}}/pic.jpg" style="width:100%">
+                            </div>
+                            <div class="sidebar-friends-content">
+                            {{this.name}}
+                            </div>
+                        </a>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="col-xl-8 col-md-8 col-sm-12 dashmain">
+
+                <span style="position: relative; z-index: 100; top:90px; left:20%; color: #1c7430;">{{storyMessage}}</span>
+                <span id="m" style="position: relative; z-index: 100; top:90px; left:20%; color: #1c7430;"></span>
+
+            <div class="col-lg-12 about-left">
+                <div style="margin-bottom:20px;">
+                <h3><i class="fas fa-book-open"></i> Your Stories</h3>
+                </div>
+                {{#if story}}
+                {{#each story}}
+                    <div style="width:100%; float:left; margin-bottom:50px;">
+                    <h4>{{this.title}}</h4>
+                    <p>{{{this.body}}}</p>
+                    <p>{{this.author}}</p>
+
+                    {{#form "/dashboard" name="myform" method="post"}}
+                    {{#if this.published}}
+                            {{hidden "storyId" this._id}}
+                        {{submit "save" "Un-Publish" class="dashboard-submit"}}
+                    {{else}}
+                        {{hidden "storyId" this._id}}
+                        {{submit "save" "Publish" class="dashboard-submit"}}
+                    {{/if}}
+                        <a href="/story/edit/{{this.id}}">
+                            <div class="dashboard-buttons" style="background:orange;">Edit</div ></a>
+                        <a href="/{{this.id}}/chapters/">
+                            <div class="dashboard-buttons" style="background:limegreen;">Chapters</div ></a>
+                        <a href="#">
+                            <div class="dashboard-buttons" style="background:red;">Delete</div ></a>
+                    {{/form}}
+                    </div>
+                {{/each}}
+                    {{else}}
+                    <h5 id="poke" style="margin-bottom: 50px; margin-top: 20px;">No Story's Written</h5>
+                {{/if}}
+                <h3>Shared Stories</h3>
+                {{#if stories}}
+                {{#each stories}}
+                    <div style="width:100%; float:left; margin-bottom:50px;">
+                        <h4>{{this.title}}</h4>
+                        <p>{{{this.body}}}</p>
+                        <p>{{this.author}}</p>
+
+                        {{#form "/dashboard" method="post"}}
+                            {{#if this.published}}
+                                {{hidden "storyId" this._id}}
+                                {{submit "save" "Un-Publish" class="dashboard-submit"}}
+                            {{else}}
+                                {{hidden "storyId" this._id}}
+                                {{submit "save" "Publish" class="dashboard-submit"}}
+                            {{/if}}
+                            <a href="/story/edit/{{this.id}}">
+                                <div class="dashboard-buttons" style="background:orange;">Edit</div ></a>
+                            <!--  <a href="#">
+                                <div class="dashboard-buttons" style="background:red;">Delete</div ></a> -->
+                        {{/form}}
+                    </div>
+                {{/each}}
+                {{else}}
+                    <h5 style="margin-bottom: 50px; margin-top: 20px;">No Story's Shared With You Yet</h5>
+                {{/if}}
+            </div>
+            </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+

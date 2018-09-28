@@ -1,0 +1,26 @@
+<div class="col-lg-12 about-left">
+    {{#if id}}
+
+        {{#form "/authorize" method="post" class="form"}}
+            <br>
+            {{label "User" "User" style="margin-top:10px;"}}
+            {{hidden "id" id}}
+            {{input "name" name  class="form-control" required=true}}
+
+            {{submit "deleted" "Delete" value="deleted" style="height:35px; margin-top:20px; margin-right:3%; width:48%; background:red;
+                border:none !important; box-shadow:none !important; color:white;"}}
+            {{submit "save" "Add" value="save" style="height:35px; margin-top:20px; margin-right:0%; width:48%; background:yellowGreen;
+                border:none !important; box-shadow:none !important; color:white;"}}
+        {{/form}}
+        <h4>Current Users</h4>
+        <div style="float:left; border: 1px #ccc solid; border-radius: 5px; width:100%; height:auto; padding:20px;">
+        {{#each users}}
+            <div style="float:left; margin-right:20px; float:left;">{{this.user}}</div>
+        {{/each}}
+        </div>
+{{else}}
+    {{#each story}}
+    <a href="/authorize/{{this.id}}">{{this.title}}</a>
+    {{/each}}
+{{/if}}
+</div>

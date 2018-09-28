@@ -1,0 +1,18 @@
+<div class="col-lg-12 about-left">
+{{error}}
+{{#each users}}
+    <div style="float:left;">
+    <img src="/user/pics/{{this.name}}/{{this.pic}}" style="width:10%;" >
+    </div>
+    <div style="float:left; width:100%;">
+        {{this.name}}
+    </div>
+    <div style="float:left;">
+    {{#form "/profile/friends" name="myform" method="post"}}
+        {{hidden "from" this.name}}
+        {{submit "save" "Accept" value="accept" class="dashboard-submit"}}
+        {{submit "save" "Deny" value ="deny" class="dashboard-submit"}}
+    {{/form}}
+    </div>
+{{/each}}
+</div>

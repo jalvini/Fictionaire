@@ -1,0 +1,24 @@
+<section id="header">
+    <!-- banner -->
+    <div class="top-bar_sub container-fluid p-3" id="header-top">
+        <div class="row">
+            <div class="col-sm-8 top-mid" style="margin: 6px -10px 7px 5px;">
+                <div class="top-logo"><a href="/"><img src="/images/logo.png" style="width: 80%; margin-top: -5px"></a></div>
+                <div class="top-link-left"><a href="" style="color:white; text-decoration: none;">Browse</a></div>
+                <div class="top-link-left"><a href="" style="color:white; text-decoration: none;">New</a></div>
+                <div class="top-link-left"><a href="/users/" style="color:white; text-decoration: none;">Community</a></div>
+            </div>
+            <div class="col-sm-4 log-icons text-right">
+                <i class="fas fa-bars" id="mobile-nav"></i>
+
+                {{#if user}}
+                    <div class="top-link-right" style="width:auto; margin-top:7px;">
+                        <a href="/dashboard/" style="color:white; text-decoration: none;">Welcome {{user.name}}</a> | <a href="/logout/" style="color:white; text-decoration: none;">Logout</a></div>
+                {{else}}
+                    <div class="top-link-right"><a href="/login/" style="color:white; text-decoration: none;">Login</a></div>
+                    <div class="top-link-right"><a href="/register/" style="color:white; text-decoration: none;">Register</a></div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>

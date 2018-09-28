@@ -1,0 +1,126 @@
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-right py-5">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 footer-grids">
+                    <h2>About Us</h2>
+                    <p class="paragraph-agileinfo">
+                        Fictionaire was designed to not only give people the freedom to write the fan fiction
+                        they want but to do it in groups. You may share your story with other authors and work on
+                        you fan fiction together
+                    </p>
+                </div>
+                <div class="col-lg-3 footer-grids mt-lg-0 mt-4">
+                    <h3>Useful Links</h3>
+                    <ul class="w3agile_footer_grid_list">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="scroll">New</a>
+                        </li>
+                        <li>
+                            <a href="#gallery" class="scroll">Community</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="scroll">Login</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="scroll">Signup</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-grids mt-lg-0 mt-4">
+                    <h3>Social Media</h3>
+                    <ul class="social_list1">
+                        <li class="text-center">
+                            <a href="#" class="facebook1">
+                                <i class="fab fa-facebook-f"></i>
+
+                            </a>
+                        </li>
+                        <li class="text-center mx-sm-3 mx-2">
+                            <a href="#" class="twitter2">
+                                <i class="fab fa-twitter"></i>
+
+                            </a>
+                        </li>
+                        <li class="text-center">
+                            <a href="#" class="dribble3">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- //Footer -->
+<!-- copyright -->
+<div class="copyright-w3layouts">
+    <div class="container">
+
+    </div>
+</div>
+<!-- //copyright -->
+<!-- Required common Js -->
+<script src='/javascripts/jquery-2.2.3.min.js'></script>
+<!-- //Required common Js -->
+<!-- flexSlider -->
+<script defer src="/javascripts/jquery.flexslider.js"></script>
+<script>
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+</script>
+
+<!-- //flexSlider -->
+
+<!--light-box-files -->
+<script src="/javascripts/lightbox-plus-jquery.min.js">
+</script>
+<!--//light-box-files -->
+
+
+<!-- start-smoth-scrolling -->
+<script src="/javascripts/move-top.js"></script>
+<script src="/javascripts/easing.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+<script>
+    $(document).ready(function () {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+
+    });
+</script>
+<!-- //here ends scrolling icon -->
+<!-- Js for bootstrap working-->
+<script src="/javascripts/bootstrap.min.js"></script>
+<!-- //Js for bootstrap working -->

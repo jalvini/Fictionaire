@@ -1,0 +1,37 @@
+<div class="col-lg-12 about-left">
+    <h1>Story</h1>
+                {{#if saved}}
+                    <div style="width:100%; text-align:center; color: #218838; height: 0px;">{{saved}}</div>
+                {{/if}}
+
+                {{#if draft}}
+                    <div style="width:100%; text-align:center; color:DarkOrange; height: 0px;">{{draft}}</div>
+                {{/if}}
+
+                {{#form "/write" method="post" class="form"}}
+                    <br>
+                    {{label "Title" "Title" style="margin-top:10px;"}}
+                    {{input "title" title  class="form-control"}}
+                    <br>
+                    {{label "Story" "Story" style="margin-top:10px;"}}
+                    <br>
+                    {{textarea "body" "Enter Your Story" rows="20" cols="120"}}
+                    <br>
+                    {{label "Category" "Category" style="margin-top:10px;"}}
+
+                    <select name="tag" class="form-control">
+                    {{#each category}}
+                        <option value="{{this.url}}">{{this.name}}</option>
+                    {{/each}}
+                    </select>
+
+                    {{submit "save" "Cancel" value="cancel" style="height:35px; margin-top:20px; margin-right:3%; width:31%; background-color:red;
+            border:none !important; box-shadow:none !important; color:white;"}}
+
+                    {{submit "save" "Save Draft" value="draft" style="height:35px; margin-top:20px; margin-right:3%; width:31%; background:orange;
+            border:none !important; box-shadow:none !important; color:white;"}}
+
+                    {{submit "save" "Publish" value="save" style="height:35px; margin-top:20px; width:31%; background-color:YellowGreen;
+            border:none !important; box-shadow:none !important; color:white;"}}
+                {{/form}}
+</div>

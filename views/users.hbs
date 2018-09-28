@@ -1,0 +1,15 @@
+        <div class="row">
+            <h4 style="float: left; clear: right; width: 100%; margin-bottom: 20px;">Users</h4>
+            {{#each users}}
+                <a href="/profile/{{this.name}}">
+                    <div class="users">
+                        <div class="user-pics">
+                            <img src="/user/pics/{{this.name}}/pic.jpg">
+                        </div>
+                        <div class="user-content">
+                            {{this.name}}
+                        </div>
+                    </div>
+                </a>
+            {{/each}}
+        </div>

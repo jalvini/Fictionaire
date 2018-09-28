@@ -1,0 +1,23 @@
+<div class="col-lg-12 about-left">
+{{#if error}}
+                    <h2>{{error}}</h2>
+                {{else}}
+                {{#form "/write" method="post" class="form"}}
+                    <h1>Story</h1>
+                    <div style="width:100%; text-align:center; color:red; height: 0px;">{{message}}</div>
+                    <br>
+                    {{label "Title" "Title" style="margin-top:10px;"}}
+                    {{input "title" story.title  class="form-control"}}
+                    <br>
+                    {{label "Story" "Story" style="margin-top:10px;"}}
+                    <br>
+                    {{textarea "body" story.body rows="20" cols="120"}}
+                    <br>
+                    {{label "Tag" "Tag" style="margin-top:10px;"}}
+                    {{input "tag" tag class="form-control"}}
+
+                    {{submit "save" "Submit" style="height:35px; margin-top:20px; width:100%; background-color:DodgerBlue;
+            border:none !important; box-shadow:none !important; color:white;"}}
+                {{/form}}
+                {{/if}}
+</div>
