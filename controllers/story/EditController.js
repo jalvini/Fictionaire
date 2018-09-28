@@ -1,4 +1,4 @@
-let Story = require('../../models/stories');
+const Story = require('../../models/stories');
 
 exports.edit =  (req, res) => {
     let user = req.session.user;
